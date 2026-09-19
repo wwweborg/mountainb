@@ -1,0 +1,51 @@
+.hero-section {
+    position: relative;
+}
+
+.hero {
+    position: relative;
+    padding-top: 12rem;
+    padding-bottom: 10rem;
+    overflow: hidden;
+    text-align: center;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 0.5;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-title {
+  font-family: 'Bricolage Grotesque', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: var(--m-t-color, var(--color-header-title));
+
+  @media (min-width: 768px) {
+    font-size: 3.5rem;
+  }
+}
+
+.hero-description {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: var(--s-t-color);
+  opacity: .85;
+
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+  }
+}

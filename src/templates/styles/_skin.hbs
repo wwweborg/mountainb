@@ -1,0 +1,85 @@
+{{!--
+b:skin content (for Customization Mode)
+@author zkreations
+@see https://bloggercode-blogconnexion.blogspot.com/2014/06/tag-b-skin-b-template-skin.html
+--}}
+<b:skin version='{{version}}'><![CDATA[
+  /*!
+    * Name        :   {{name}}
+    * Version     :   {{version}}
+    * Variant     :   {{variant}}
+    * License     :   {{license}}
+    * Description :   {{description}}
+    * Author      :   {{author}}
+    * Author URL  :   {{author-url}}
+    * Sopport     :   {{support}}
+    * Changelog   :   {{changelog}}
+    * Donate      :   {{donate}}
+    * Copyright   :   {{copyright}}
+    *//*!
+
+  Admin
+  =====================
+  {{> setting-admin}}
+
+  General
+  =====================
+  {{> setting-general}}
+
+  Translatable strings
+  =====================
+  {{> setting-text}}
+
+  Customization
+  =====================
+  {{> folder.customization}}
+
+  Skin CSS variables
+  =====================*/
+  :root {
+    {{> hamlet.skinVars}}
+
+    --template-padding: $(template.padding);
+  }
+
+  @media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--d-background);
+    --surface: var(--d-surface);
+    --primary: var(--d-primary);
+    --m-t-color: var(--d-m-t-color);
+    --s-t-color: var(--d-s-t-color);
+    --i-color: var(--d-i-color);
+
+    /* Versiones oscuras de los resaltadores */
+    --hl-y: $(d.y.hl.color);
+    --hl-o: $(d.o.hl.color);
+    --hl-r: $(d.r.hl.color);
+    --hl-g: $(d.g.hl.color);
+    --hl-b: $(d.b.hl.color);
+
+    /* Colors */
+    --w-b-c-good: var(--w-d-b-c-good);
+    --w-t-c-good: var(--w-d-t-c-good);
+    --w-bd-c-good: var(--w-d-bd-c-good);
+
+    --w-b-c-danger: var(--w-d-b-c-danger);
+    --w-t-c-danger: var(--w-d-t-c-danger);
+    --w-bd-c-danger: var(--w-d-bd-c-danger);
+
+    --w-b-c-warning: var(--w-d-b-c-warning);
+    --w-t-c-warning: var(--w-d-t-c-warning);
+    --w-bd-c-warning: var(--w-d-bd-c-warning);
+  }
+}
+
+  /*
+  All styles
+  =====================*/
+  {{asset '/dist/css/main.min.css'}}
+  {{asset '~/@zkreations/typography/main.min.css'}}
+
+  /*
+  Your custom styles
+  =====================*/
+]]></b:skin>

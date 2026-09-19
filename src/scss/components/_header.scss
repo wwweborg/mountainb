@@ -1,0 +1,123 @@
+.header {
+  padding: 1.1rem 0;
+  text-align: left;
+  background: var(--background);
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  background-image: none !important;
+
+  @media (min-width: 992px) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 2rem;
+    padding: 1.5rem 0;
+
+    .widget {
+      flex: 0 0 auto;
+    }
+  }
+
+  &-logo {
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: 992px) {
+      justify-content: flex-start;
+    }
+  }
+
+  &-title {
+    font-size: 1.75rem;
+    font-family: var(--font-logo-family);
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: 992px) {
+      justify-content: flex-start;
+    }
+
+    a {
+      color: var(--m-t-color)
+    }
+  }
+
+  &-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-header-subtitle)
+  }
+
+  &-bars {
+    left: 2rem;
+
+    &::before {
+      pointer-events: var(--switch-bars, none);
+      opacity: var(--switch-bars, 0);
+    }
+
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+
+  &-search {
+    right: 2rem;
+
+    &::before {
+      pointer-events: var(--switch-search, none);
+      opacity: var(--switch-search, 0);
+    }
+  }
+
+  .google-auto-placed {
+    display: none !important
+  }
+}
+
+.links {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: .35rem;
+
+  &-header {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &-title {
+    font-size: .9375rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    margin-bottom: .5rem;
+  }
+
+  &-link {
+    display: flex;
+    padding: .35rem 0;
+    color: var(--s-t-color);
+    transition: color .2s ease;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}
+
+#header {
+  @media (min-width: 992px) {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .widget {
+      flex: 0 0 auto;
+    }
+  }
+}

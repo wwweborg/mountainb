@@ -1,0 +1,57 @@
+{{!--
+Module for creating a post card
+@author zkreations
+@param {array} [items=data:posts] - Array of posts
+--}}
+<b:includable id='post:card'>
+  <b:loop index='i' values='data:items ?: data:posts' var='post'>
+    <article class='card'>
+      <a class='card-content' expr:href='data:post.url.canonical'>
+        {{!-- Primera categoría del post, sobre la imagen --}}
+        <b:if cond='data:post.labels'>
+          <span class='card-category'>
+            <data:post.labels.first.name/>
+          </span>
+        </b:if>
+        {{!-- If the post has a featured image, display it --}}
+        <b:if cond='data:post.featuredImage'>
+          {{!-- Check if featured image is a YouTube video --}}
+          <b:with value='data:post.featuredImage.isYoutube' var='isYoutube'>
+            <b:class name='has-image'/>
+            <b:include name='@image' data='{
+                class: "card-image",
+                src: data:post.featuredImage,
+                resize: (data:isYoutube ? 600 : 420),
+                ratio: (data:isYoutube ? "16:9" : "4:3"),
+                params: data:skin.vars.c_imageParams,
+                loading: (data:i gt 2 ? "lazy" : "")
+              }'/>
+          </b:with>
+        </b:if>
+        <div class="ctn-card">
+          {{!-- If title is empty, display "No title" --}}
+          <h2 class='card-title'>
+            <b:eval expr='data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle'/>
+          </h2>
+          <div class="card-meta">
+          {{!-- Include post snippet --}}
+          <b:include name='@snippet' data='{
+              class: "card-snippet",
+              string: data:post.snippets.long
+            }'/>
+        {{!-- Author name --}}
+        <b:if cond='data:post.author.authorPhoto.image'>
+                <img class='m-card-avatar' expr:alt='data:post.author.name' expr:src='data:post.author.authorPhoto.image'/>
+                </b:if>
+              {{!-- Fecha del post --}}
+              <span class='card-date'>
+                <data:post.date/>
+              </span>
+          </div>
+        </div>
+      </a>
+    </article>
+    {{!-- Show inline ad --}}
+    <b:include name='post:inlineAd'/>
+  </b:loop>
+</b:includable>

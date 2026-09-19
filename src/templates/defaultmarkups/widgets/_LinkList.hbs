@@ -1,0 +1,16 @@
+{{!--
+Content of the widget LinkList
+@author zkreations
+@see https://bloggercode-blogconnexion.blogspot.com/2019/04/widget-linkList.html
+--}}
+<b:includable id='widget:LinkList'>
+  <div class='links'>
+    <b:class cond='data:widget.sectionId == "header"' name='links-header'/>
+    <b:class cond='data:widget.sectionId == "footer-links"' name='links-footer'/>
+    <b:loop values='data:links' var='link'>
+      <a class='links-link' expr:href='data:link.target'>
+        <data:link.name/>
+      </a>
+    </b:loop>
+  </div>
+</b:includable>

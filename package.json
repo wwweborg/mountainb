@@ -1,0 +1,51 @@
+{
+  "name": "hamlet",
+  "version": "1.0.0",
+  "description": "A simple and lightweight starter theme for Blogger.",
+  "type": "module",
+  "scripts": {
+    "dev": "hamlet --mode development --watch",
+    "start": "hamlet --mode production --watch",
+    "build": "hamlet --mode production",
+    "info": "hamlet --info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zkreations/hamlet.git"
+  },
+  "author": "zkreations <daniel@zkreations.com> (https://zkreations.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zkreations/hamlet/issues"
+  },
+  "homepage": "https://github.com/zkreations/hamlet#readme",
+  "dependencies": {
+    "@zkreations/typography": "^1.0.1",
+    "blogger-admin-wp": "^1.0.1",
+    "hamlet-builder": "^1.2.64"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-standard": "^17.1.0"
+  },
+  "theme": {
+    "name": "MountainB",
+    "version": "3.00",
+    "variant": "Surface",
+    "license": "MIT",
+    "description": "Blogger template for personal blog and other uses.",
+    "author": "Dimas A. Gómez",
+    "author-url": "https://github.com/dimas-a-gomez",
+    "support": "https://discord.gg/M9q2YCxwJg",
+    "changelog": ".link",
+    "donate": "https://ko-fi.com/dimasagomez",
+    "copyright": "2026 MountainB - Engines MicroTecN Co."
+  },
+  "browserslist": [
+    ">= 1%",
+    "last 2 major versions",
+    "not dead",
+    "not edge <= 18",
+    "not ie <= 11"
+  ]
+}

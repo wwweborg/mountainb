@@ -1,0 +1,131 @@
+// Container for the cards
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  gap: 1rem;
+}
+
+.main .cards {
+  margin-top: -9rem;
+}
+
+.section-block {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  &:first-child {
+    margin-top: 4rem;
+  }
+}
+
+.section-block-title {
+  font-family: 'Bricolage Grotesque', serif;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--m-t-color);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.section-block-title {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.card {
+  background-color: var(--surface);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  text-decoration: none;
+  overflow: hidden;
+  padding-bottom: 0.5rem;
+  transition: filter 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    filter: brightness(0.92);
+  }
+
+  &-content {
+    position: relative;
+    display: inline-block;
+  }
+
+  &-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 0;
+    background-color: var(--surface);
+  }
+
+  &-meta {
+    background: var(--card-body-bg, transparent);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+  }
+
+  &-title {
+    font-family: 'Gloock', serif;
+    color: var(--m-t-color);
+    font-size: 1.20rem;
+    font-weight: 400;;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  &-snippet {
+    color: var(--s-t-color);
+    opacity: .75;
+    margin-bottom: 1rem;
+  }
+
+
+  &-category {
+    padding: 0.5rem;
+    background-color: var(--surface);
+    width: max-content;
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--s-t-color);
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 0.5;
+  }
+
+  &-date {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--s-t-color);
+  }
+}
+
+.card-author-meta {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+.card-author-name {
+  font-family: 'Inter';
+  font-weight: 600;
+  color: var(--s-t-color);
+  display: inline-flex;
+  align-items: left;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.m-card-avatar { corner-shape: square; }
+
+.ctn-card { padding: 1.5rem; }

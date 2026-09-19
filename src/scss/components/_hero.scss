@@ -1,0 +1,104 @@
+/* Hero Section */
+
+.mountain-hero-section {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.m-hero-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--backgroud);
+    display: flex;
+    align-items: flex-end; 
+}
+
+.m-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--background) 0%, rgba(0, 0, 0, 0) 50%);
+    z-index: .01;
+}
+
+.m-hero-inner {
+    position: relative;
+    z-index: .001;
+    width: 100%;
+    max-width: var(--container, 1340px);
+    margin: 0 auto;
+    padding: 0 2rem 9rem 2rem;
+}
+
+@media (min-width: 1340px) {
+    .m-hero-inner {
+        padding: 0 .01rem 9rem .01rem;
+    }
+}
+
+.m-hero-title {
+    font-family: 'Bricolage Grotesque', serif;
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 1rem 0;
+    max-width: 900px;
+    text-shadow: 2px 2px 100px var(--surface);
+    
+    a {
+        color: var(--m-t-color) !important;
+        text-decoration: none !important;
+        background: transparent !important;
+    }
+}
+
+.m-hero-snippet {
+    font-family: var(--font-text-family, sans-serif);
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
+    color: var(--s-t-color) !important;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 0 2rem 0;
+}
+
+.m-hero-meta {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-main, sans-serif);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.m-hero-author {
+    font-family: var(--font-text-family);
+    font-weight: 600;
+    color: var(--s-t-color) !important;
+    display: flex;
+    align-items: center;
+    
+    &::after {
+        content: "-";
+        margin: 0 1rem;
+        color: var(--s-t-color) !important;
+    }
+}
+
+.m-card-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 10%;
+    margin-right: 1rem;
+}
+
+.m-hero-date {
+    font-family: var(--font-text-family);
+    font-weight: 600;
+    color: var(--s-t-color) !important;
+}

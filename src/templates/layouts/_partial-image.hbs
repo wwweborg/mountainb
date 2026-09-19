@@ -1,0 +1,15 @@
+{{!--
+Widget para subir imágenes.
+@author MicroTecN
+--}}
+
+<b:if cond="data:skin.vars.a_tools">
+    <b:tag class="tools" name="div" cond="data:view.isLayoutMode">
+        <b:section class="none" id="tools" cond="data:widgets any (w =&gt; w.sectionId == &quot;tools&quot;)" maxwidgets="2" showaddelement="false">
+        <b:widget id="Image30" type="Image" version="2" cond="data:view.isLayoutMode" title="Upload images" locked="true" visible="false">
+            <b:includable id="content"/>
+            <b:includable id="main"/>
+        </b:widget>
+        </b:section>
+    </b:tag>
+</b:if>

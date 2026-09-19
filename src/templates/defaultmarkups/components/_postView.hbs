@@ -1,0 +1,60 @@
+{{!--
+Module for generating posts view (isPost, isPage)
+@author zkreations
+--}}
+<b:includable id='post:view'>
+  {{!-- Post featured image --}}
+  <b:if cond='data:post.featuredImage'>
+    <div class='post-thumbnail'>
+      <img expr:alt='data:post.title.escaped' expr:src='data:post.featuredImage'/>
+    </div>
+  </b:if>
+  {{!-- Post header --}}
+  <header class='post-header'>
+    <h1 class='post-title'><data:post.title.escaped/></h1>
+    {{!-- Post author + date --}}
+    <b:if cond='data:view.isPost'>
+      <div class='post-author'>
+        <b:if cond='data:post.author.authorPhoto.image'>
+          <img class='post-author-avatar' expr:alt='data:post.author.name' expr:src='data:post.author.authorPhoto.image'/>
+        </b:if>
+        <div class='post-author-info'>
+          <a class='post-author-name' expr:href='data:blog.homepageUrl.canonical + "p/author.html"'>
+            <data:post.author.name/>
+            <svg class="i i-badge-check" viewBox="0 0 24 24">
+              <path d="m8.5 12.5 2 2 5-5m4.3 5.7a1 1 0 0 0 0-6.4 1 1 0 0 0-4.6-4.6 1 1 0 0 0-6.4 0 1 1 0 0 0-4.6 4.6 1 1 0 0 0 0 6.4 1 1 0 0 0 4.6 4.6 1 1 0 0 0 6.4 0 1 1 0 0 0 4.6-4.6Z"></path>
+            </svg>
+          </a>
+          <span class='post-date'><data:post.date/></span>
+        </div>
+      </div>
+    </b:if>
+  </header>
+  {{!-- Post body --}}
+  <section class='post-body typography'>
+    <b:include name='post:ads1'/>
+    <data:post.body/>
+    <b:include name='post:ads2'/>
+  </section>
+  {{!-- Post labels/tags --}}
+  <b:if cond='data:post.labels'>
+    <hr />
+    <div class='post-labels'>
+      <b:loop values='data:post.labels' var='label'>
+        <a class='post-labels-item' expr:href='data:label.url'><data:label.name/></a>
+      </b:loop>
+    </div>
+  </b:if>
+  {{!-- Post footer --}}
+  <footer class='post-comment'>
+    <b:include name='comment:main' data='{
+        depth: 2,
+        texts: {
+          delete: data:skin.vars.t_delete,
+          reply: data:skin.vars.t_reply
+        }
+      }'/>
+  </footer>
+  {{!-- Post metadata --}}
+  <b:include name="postMetadataJSON"/>
+</b:includable>

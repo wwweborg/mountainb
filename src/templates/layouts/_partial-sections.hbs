@@ -1,0 +1,33 @@
+{{!--
+Partial: Sections (categorías dinámicas en homepage)
+--}}
+<b:if cond='data:view.isHomepage'>
+    <b:section id='sections' maxwidgets='1'>
+        <b:widget id='LinkList60' type='LinkList' version='2' locked='true' title='Sections'>
+        <b:includable id='content'/>
+        <b:includable id='main'>
+            <b:loop values='data:links' var='link'>
+            <b:if cond='data:link.target contains "{" and data:link.target contains "}"'>
+                <b:with expr:value='data:link.target' var='cfg'>
+                <section class='section-block'>
+                    <b:attr name='data-tag' expr:value='data:cfg.tag'/>
+                    <b:attr name='data-results' expr:value='data:cfg.results ?: 6'/>
+                    <h2 class='section-block-title'>
+                    <b:if cond='data:cfg.icon'>
+                        <i expr:data-i='data:cfg.icon' class='section-block-icon'></i>
+                    </b:if>
+                    <data:cfg.name/>
+                    </h2>
+                    <div class='cards section-block-cards'>
+                    <b:loop values='1 to (data:cfg.results ?: 6)' var='n'>
+                        <div class='card card-skel'/>
+                    </b:loop>
+                    </div>
+                </section>
+                </b:with>
+            </b:if>
+            </b:loop>
+        </b:includable>
+        </b:widget>
+    </b:section>
+</b:if>

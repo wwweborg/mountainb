@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:js='true'>
+<b:include name='m:root'/>
+<head>
+  <title>
+    <data:view.title.escaped/>
+  </title>
+  <b:include name='m:head'/>
+  {{!-- All styles --}}
+  <b:if cond="!data:view.isLayoutMode">
+    {{> skin}}
+  <b:else/>
+    {{> template-skin}}
+  </b:if>
+  {{> defaultmarkups}}
+  {{!-- Generate responsive image styles --}}
+  <b:if cond='not data:view.isPreview'>
+    <b:include data='{
+      selector: ".header",
+      image: data:skin.vars.body_background.image
+    }' name='responsiveImageStyle'/>
+  </b:if>
+</head>
+
+<body>
+  <b:include name='@kind'/>
+  {{!-- Image --}}
+  {{> partial-image}}
+  <b:tag name='div' class='layout-edit' cond='data:view.isLayoutMode and data:skin.vars.a_layoutEdit'>
+  {{> partial-offcanvas}}
+  <b:tag cond='data:view.isLayoutMode' name='div' class='layout-section'>
+    {{!-- Header --}}
+    <header class='header'>
+      {{> partial-header}}
+    </header>
+    {{!-- Welcome Section --}}
+    {{> partial-welcome}}
+    {{!-- Hero Section --}}
+    {{> partial-hero}}
+    {{!-- Content --}}
+    <div class='template'>
+      <div class='container'>
+        <main class='main'>
+          {{> partial-main}}
+        </main>
+        {{!-- Sections --}}
+        {{> partial-sections}}
+        <footer class='footer'>
+          {{> partial-footer}}
+        </footer>
+      </div>
+    </div>
+  </b:tag>
+  </b:tag>
+  <script>
+  /*<![CDATA[*/
+  {{#if development}}
+    {{asset '/dist/js/icons.js'}}
+  {{else}}
+    {{asset '/dist/js/icons.min.js'}}
+  {{/if}}
+  /*]]>*/
+</script>
+<script>
+/*<![CDATA[*/
+{{#if development}}
+  {{asset '/dist/js/sections.js'}}
+{{else}}
+  {{asset '/dist/js/sections.min.js'}}
+{{/if}}
+/*]]>*/
+</script>
+</body>
+</html>

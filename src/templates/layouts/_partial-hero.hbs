@@ -1,0 +1,45 @@
+{{!-- 
+Partial: Mountain Hero Section
+--}}
+<b:section id='first-hero' class='mountain-hero-section' maxwidgets='1' showaddelement='no'>
+    <b:widget id='FeaturedPost1' locked='true' title='Featured Post' type='FeaturedPost' visible='true'>
+        
+        <b:includable id='main'>
+        <b:if cond='data:view.isHomepage'>
+            <b:loop values='data:posts' var='post'>
+            <b:include data='post' name='hero-content'/>
+            </b:loop>
+        </b:if>
+        </b:includable>
+
+        <b:includable id='hero-content'>
+        <div class='m-hero-wrapper' expr:style='data:post.featuredImage ? "background-image: url(" + resizeImage(data:post.featuredImage, 1600) + ");" : ""'>
+            
+            {{!-- Capa de degradado --}}
+            <div class='m-hero-overlay'></div>
+            
+            {{!-- Contenido --}}
+            <div class='m-hero-inner'>
+            <h1 class='m-hero-title'>
+                <a expr:href='data:post.url.canonical'><data:post.title/></a>
+            </h1>
+            
+            <p class='m-hero-snippet'>
+                <b:eval expr='data:post.snippets.long snippet { length: 100, links: false, linebreaks: false, ellipsis: true }'/>
+            </p>
+            
+            <div class='m-hero-meta'>
+
+                <b:if cond='data:post.author.authorPhoto.image'>
+                <img class='m-card-avatar' expr:alt='data:post.author.name' expr:src='data:post.author.authorPhoto.image'/>
+                </b:if>
+                <span class='m-hero-author'><data:post.author.name/></span>
+                <span class='m-hero-date'><data:post.date/></span>
+            </div>
+            </div>
+
+        </div>
+        </b:includable>
+        
+    </b:widget>
+</b:section>

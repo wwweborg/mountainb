@@ -1,0 +1,24 @@
+{{!--
+Partial: Hero content
+@author microtecn
+--}}
+<b:if cond='data:view.isHomepage'>
+    <b:section id='second-hero' class='hero-section' maxwidgets='1'>
+        <b:widget id='Header52' type='Header' version='2' locked='true' title='Welcome'>
+            <b:includable id='content'/>
+            <b:includable id='main'>
+            <div class='hero'>
+                <b:if cond='data:image'>
+                <img class='hero-bg' expr:alt='data:title' expr:src='data:image'/>
+                </b:if>
+                <div class='hero-content'>
+                <h1 class='hero-title'><data:title/></h1>
+                <b:if cond='data:description'>
+                    <p class='hero-description'><data:description/></p>
+                </b:if>
+                </div>
+            </div>
+            </b:includable>
+        </b:widget>
+    </b:section>
+</b:if>

@@ -1,0 +1,47 @@
+.searchbox {
+  pointer-events: var(--switch-search, none);
+  opacity: var(--switch-search, 0);
+  transition: opacity var(--transition-config), transform var(--transition-config);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, var(--switch-search-position, -45%));
+  z-index: 99;
+  width: calc(100% - 2rem);
+  max-width: 400px;
+  padding: 1rem;
+  background-color: transparent;
+
+  @media (min-width: 769px) {
+    position: fixed;
+    top: 55px;
+    left: auto;
+    right: 20px;
+    transform: translateY(var(--switch-search-position, 0%));
+    width: 280px;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  &-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    background-color: var(--search-bg, rgba(50, 45, 40, 0.95)); 
+    color: var(--s-t-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: background-color var(--transition-config), border-color var(--transition-config);
+
+    &::placeholder {
+      color: var(--s-t-color);
+      opacity: 0.8;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary);
+      background-color: var(--search-bg-focus, rgba(60, 55, 50, 1));
+    }
+  }
+}
