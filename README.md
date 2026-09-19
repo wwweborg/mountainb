@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="80" src="./static/logo.svg" alt="MountainB Logo" align="center" />
+  <img width="200" src="./static/logo.svg" alt="MountainB Logo" align="center" />
 
   <p>Blogger theme built with Hamlet’s modular architecture.</p>
 
