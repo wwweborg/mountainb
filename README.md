@@ -18,24 +18,24 @@
   </p>
 </div>
 
-## Características
+## Features
 
-* Tema modular
-* Modo claro/oscuro automático
-* Optimizado para SEO
-* Diseño responsive
-* Alta velocidad
-* Fáacil de entender
-* Documentación incluida
+* Modular theme
+* Automatic light/dark mode
+* SEO optimized
+* Responsive design
+* Fast performance
+* Easy to understand
+* Documentation included
 
-## Instalar tema
+## Installing the Theme
 
-Puedes descargar o copiar el código XML del tema llendo precionando [aquí](https://github.com/wwweborg/mountainb/releases/download/v3.00/mountainb.3.00.xml).
+You can download or copy the theme's XML code by clicking [here](https://github.com/wwweborg/mountainb/releases/download/v3.00/mountainb.3.00.xml).
 
-## Desarrolladores
+## Developers
 
-Puedes descargar este repositorio y ejecutar los siguientes comandos para iniciar a desarrollar:
+You can clone this repository and run the following commands to start developing:
 
-* `npm install` para descargar todas las dependencias
-* `npm run build` para compilar el tema
-* `npm run start` para compilar y escuchar los cambios que se hagan
+* `npm install` to install all dependencies
+* `npm run build` to compile the theme
+* `npm run start` to compile the theme and watch for changes
